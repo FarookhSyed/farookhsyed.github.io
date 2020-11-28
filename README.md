@@ -1,0 +1,2 @@
+# farookhsyed.github.io
+This is Farookh Syed, a B.Tech student in Sasi Institute of Technology &amp; Engineering. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of Computer Science &amp; Engineering and always build awesome products..

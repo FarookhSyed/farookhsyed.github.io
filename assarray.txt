@@ -1,0 +1,7 @@
+creators = Hash.new;
+creators = {"Vaccine"=>"Paschar","Dynamite"=>"Nobel","Toilet"=>"Creeper"};
+size = creators.length;
+puts "Size of hash is: #{size}";
+creators.eachdo |key,val|
+puts "#{key} invented by #{val}"
+end

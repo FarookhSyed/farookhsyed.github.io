@@ -1,0 +1,7 @@
+print "Enter a,b,c values:"
+a=gets.to_i
+b=gets.to_i
+c=gets.to_i
+s = (a+b+c)/2
+area = Math.sqrt(s*(s-a)*(s-b)*(s-c)).round(2)
+print "Area of Triangle=#{area}"

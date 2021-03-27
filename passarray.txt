@@ -1,0 +1,21 @@
+%ages = ('kiran'=>19,'vijay'=>21,'raju'=>20);
+print"Original Array:\n";
+print"===========================\n";
+while (($key) = each %ages)
+{
+print "$key is $ages{$key} years old\n ";
+}
+$ages{'mayur'} = 24;
+print"\nAfter adding element:\n";
+print"===========================\n";
+while(($key) = each %ages)
+{
+print "$key is $ages{$key} years old\n ";
+}
+delete( $ages{'vijay'});
+print"\nAfter deleting element:\n";
+print"===========================\n";
+@all_keys = keys(%ages);
+print "Keys are: @all_keys\n";
+@all_values = values(%ages);
+print "Values are: @all_values";

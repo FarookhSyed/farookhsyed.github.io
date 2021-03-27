@@ -1,0 +1,24 @@
+puts "Bubble Sort"
+puts "==========="
+print "Enter the size of the array:"
+n=gets.to_i
+a=Array.new(n)
+puts "Enter the elements :"
+foriin0..n-1
+a[i]=gets.to_i
+end
+#Bubble sort Algorithm
+t=0
+foriin0..n-1
+for j ini..n-1
+if (a[i] > a[j])
+t=a[j]
+a[j]=a[i]
+a[i]=t
+end
+end
+end
+puts "After Sorting :"
+foriin0..n-1
+print "#{a[i]} "
+end

@@ -1,0 +1,4 @@
+print "Enter file name:";
+fname = gets.chomp;
+count = IO.readlines(fname).size
+puts "There are #{count} lines in #{fname}";

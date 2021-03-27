@@ -1,0 +1,35 @@
+<!ELEMENT catalogue (book)*>
+<!ELEMENT book (Title,author,publication,price)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publication (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+catalogue demo.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Catalogue SYSTEM "catalogue.dtd">
+<catalogue>
+<book>
+<Title>XML Bible</Title>
+<author>winston</author>
+<publication>wiely</publication>
+<price>$490</price>
+</book>
+<book>
+<Title>AI</Title>
+<author>s.russel</author>
+<publication>wiely</publication>
+<price>$490</price>
+</book>
+<book>
+<Title>java2</Title>
+<author>watston</author>
+<publication>wiely</publication>
+<price>$490</price>
+</book>
+<book>
+<Title>HTML in 24 hours</Title>
+<author>sam peter</author>
+<publication>wiely</publication>
+<price>$490</price>
+</book>
+</catalogue>

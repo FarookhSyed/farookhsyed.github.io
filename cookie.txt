@@ -1,0 +1,78 @@
+login.html:
+<html>
+<head>
+</head>
+<title>Login Page</title>
+<body>
+<center>
+<h3> Login Page</h3>
+<form name="f1" action="setcookie.php" method="post">
+<table frame="border">
+<tr>
+<td>User</td>
+<td><input type="text" name="user" size="20" value="" /></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="pwd" size="20" value="" /></td>
+</tr>
+<tr>
+<tdalign="center" colspan="2"><input type="submit" value="Sign in" />
+<input type="reset" />
+</td>
+</tr>
+</table>
+</form>
+</body>
+</center>
+</html>
+setcookie.php
+<html>
+<head>
+</head>
+<title>Set Cookie</title>
+<body>
+<?php
+    $user = $_POST['user'];
+    $pwd = $_POST['pwd'];
+setcookie("user", $user, time() + 3600 * 2);
+setcookie("pwd", $pwd, time() + 3600 * 2);
+    echo "<h3>The Cookie Added...</h3>";
+    ?>
+</body>
+</html>
+getcookie.php:
+<html>
+<head>
+</head>
+<title>Get Cookie</title>
+
+<body>
+<?php
+    $user = $_COOKIE['user'];
+    $pwd = $_COOKIE['pwd'];
+    if ($user == "user1") {
+        if ($pwd == "pwd1")
+            echo "<h2>Welcome User1 </h2>";
+        else
+            echo "<h2>You are not an authenticated user.</h2>";
+    } elseif ($user == "user2") {
+        if ($pwd == "pwd2")
+            echo "<h2>Welcome User2</h2>";
+        else
+            echo "<h2>You are not an authenticated user.</h2>";
+    } elseif ($user == "user3") {
+        if ($pwd == "pwd3")
+            echo "<h2>Welcome User3</h2>";
+        else
+            echo "<h2>You are not an authenticated user.</h2>";
+    } elseif ($user == "user4") {
+        if ($pwd == "pwd4")
+            echo "<h2>Welcome User4</h2>";
+        else
+            echo "<h2>You are not an authenticated user.</h2>";
+    } else
+        echo "<h2>Invalid Username/Password</h2>";
+    ?>
+</body>
+</html>

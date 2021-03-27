@@ -1,0 +1,72 @@
+classCmplx
+attr_accessor:real, :imag
+defread
+@real=gets.to_i
+@imag=gets.to_i
+end
+def add(other)
+ob = Cmplx.new
+ob.real = @real+other.real;
+ob.imag = @imag+other.imag;
+returnob
+end
+def subtract(other)
+ob = Cmplx.new;
+ob.real = @real-other.real;
+ob.imag = @imag-other.imag;
+returnob;
+end
+def multiply(other)
+ob = Cmplx.new
+ob.real = (@real * other.real)-(imag*other.imag);
+ob.imag = (@real * other.imag)+(imag*other.real);
+returnob;
+end
+def divide(other)
+t = Cmplx.new;
+ob = Cmplx.new;
+t.imag = -other.imag;
+r =(other.real).abs;
+i =(other.imag).abs;
+d =(r*r)+(i*i);
+ob.real = ((@real * other.real)-(imag*t.imag))/d;
+ob.imag = ((@real * t.imag)+(imag*other.real))/d;
+returnob;
+end
+defdisp
+if@imag<0
+puts "#{@real}#{@imag}i"
+else
+puts "#{@real}+#{@imag}i"
+end
+end
+end
+
+t1 = Cmplx.new
+t2 = Cmplx.new
+t3 = Cmplx.new
+t4 = Cmplx.new
+t5 = Cmplx.new
+t6 = Cmplx.new
+puts "Enter first number"
+t1.read
+puts "Enter Second number"
+t2.read
+print "FIRST NUMBER:"
+t1.disp
+print "SECOND NUMBER:"
+t2.disp
+print "=================\n";
+print "ADDITION:"
+t3 = t1.add(t2)
+t3.disp
+print "SUBTRACTION:"
+t4 = t1.subtract(t2)
+t4.disp
+print "PRODUCT:"
+t5 = t1.multiply(t2)
+t5.disp
+print "DIVSION:"
+t6 = t1.divide(t2)
+t6.disp
+print "=================";

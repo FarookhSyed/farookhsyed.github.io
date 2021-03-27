@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create Record</title>
+<style type="text/css">
+        .wrapper {
+            width: 500px;
+            margin: 0 auto;
+        }
+        input {
+            padding: 5px;
+            margin: 20px;
+        }
+</style>
+</head>
+<body>
+<div align="center">
+<div>
+<h2>Contact Form</h2>
+</div>
+<p>Please fill this form and submit to add employee record to the database.</p>
+<form action="insert.php" method="post">
+<div>
+<label>Name</label>
+<input type="text" name="name">
+</div>
+<div>
+<label>Email</label>
+<input type="email" name="email">
+</div>
+<div>
+<label>Company Name</label>
+<input type="text" name="company">
+</div>
+<div>
+<label>Message</label>
+<input type="text" name="message">
+</div>
+<input type="submit" name="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
+
+insert.php
+<?php
+include_once 'db.php';
+if(isset($_POST['submit']))
+{    
+     $name = $_POST['name'];
+     $email = $_POST['email'];
+     $company = $_POST['company'];
+     $message = $_POST['message'];
+     $sql = "INSERT INTO contact (name,email,company,message)
+     VALUES ('$name','$email','$company','$message')"; 
+     if (mysqli_query($conn, $sql)) {
+        echo "New record has been added successfully !";
+     } else {
+        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+     }
+mysqli_close($conn);
+}
+?>
+
+Db.php
+
+<?php
+    $servername='localhost';
+    $username='root';
+    $password='';
+    $dbname = "contact";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+      if(!$conn){
+die('Could not Connect MySql Server:' .mysql_error());
+        }
+?>
